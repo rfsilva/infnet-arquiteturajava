@@ -7,6 +7,8 @@ Disciplina: Arquitetura Java
 
 Professor: Elberth Lins Costa de Moraes
 
+Aluno: Rodrigo Feliciano da Silva
+
 Projeto: Locadora Virtual
 
 
