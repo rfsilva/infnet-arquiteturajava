@@ -13,6 +13,7 @@ public class CDTeste implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        //TODO Ajustar os conteúdos
         Calendar cal1 = Calendar.getInstance();
         cal1.set(1996, Calendar.FEBRUARY, 10);
         CD c1 = CD.builder()
