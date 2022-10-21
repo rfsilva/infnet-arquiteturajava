@@ -5,19 +5,12 @@ import java.time.LocalDate;
 
 public class Item {
 
-    private Integer id;
     private String nome;
     private String descricao;
     private LocalDate dataPublicacao;
     
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
     public String getNome() {
         return nome;
     }
@@ -39,8 +32,7 @@ public class Item {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(id).append(";")
-            .append(nome).append(";")
+        builder.append(nome).append(";")
             .append(descricao).append(";")
             .append(sdf.format(dataPublicacao)).append(";");
         return builder.toString();
