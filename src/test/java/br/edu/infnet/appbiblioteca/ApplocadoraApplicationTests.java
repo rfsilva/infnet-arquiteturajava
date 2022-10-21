@@ -1,4 +1,4 @@
-package br.edu.infnet.applocadora;
+package br.edu.infnet.appbiblioteca;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
