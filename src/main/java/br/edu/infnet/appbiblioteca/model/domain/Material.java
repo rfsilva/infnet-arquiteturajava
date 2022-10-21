@@ -3,10 +3,11 @@ package br.edu.infnet.appbiblioteca.model.domain;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class Item {
+public abstract class Material {
 
     private String nome;
     private String descricao;
+    private Double valor;
     private LocalDate dataPublicacao;
     
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -22,6 +23,12 @@ public class Item {
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    public Double getValor() {
+        return valor;
+    }
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
     public LocalDate getDataPublicacao() {
         return dataPublicacao;

@@ -1,6 +1,6 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
-public class Periodico extends Item {
+public class Periodico extends Material {
 
     private String editora;
     private String abrangencia;

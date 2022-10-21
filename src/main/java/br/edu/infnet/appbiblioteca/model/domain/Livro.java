@@ -1,6 +1,6 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
-public class Livro extends Item {
+public class Livro extends Material {
 
     private String autor;
     private Integer totalPaginas;
