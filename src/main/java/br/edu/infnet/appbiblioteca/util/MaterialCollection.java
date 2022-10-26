@@ -1,7 +1,7 @@
 package br.edu.infnet.appbiblioteca.util;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Livro;
@@ -45,11 +45,7 @@ public class MaterialCollection {
         p1.setValor(Double.valueOf("3.99"));
         System.out.println("> " + p1);
         
-        List<Material> list = new ArrayList<>();
-        list.add(m1);
-        list.add(l1);
-        list.add(p1);
-        return list;
+        return Arrays.asList(m1, l1, p1);
     }
 
 }

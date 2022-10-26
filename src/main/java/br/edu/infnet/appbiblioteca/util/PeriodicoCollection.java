@@ -1,7 +1,7 @@
 package br.edu.infnet.appbiblioteca.util;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Periodico;
@@ -41,11 +41,7 @@ public class PeriodicoCollection {
         p3.setValor(Double.valueOf("2.99"));
         System.out.println("> " + p3);
         
-        List<Periodico> list = new ArrayList<>();
-        list.add(p1);
-        list.add(p2);
-        list.add(p3);
-        return list;
+        return Arrays.asList(p1, p2, p3);
     }
 
 }

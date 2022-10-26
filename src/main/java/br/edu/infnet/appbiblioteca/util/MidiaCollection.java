@@ -1,7 +1,7 @@
 package br.edu.infnet.appbiblioteca.util;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Midia;
@@ -44,11 +44,7 @@ public class MidiaCollection {
         m3.setValor(Double.valueOf("149.99"));
         System.out.println("> " + m3);
         
-        List<Midia> list = new ArrayList<>();
-        list.add(m1);
-        list.add(m2);
-        list.add(m3);
-        return list;
+        return Arrays.asList(m1, m2, m3);
     }
 
 }

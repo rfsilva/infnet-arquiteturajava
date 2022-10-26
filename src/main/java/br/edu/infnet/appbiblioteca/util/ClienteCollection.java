@@ -1,7 +1,7 @@
 package br.edu.infnet.appbiblioteca.util;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Cliente;
@@ -37,11 +37,7 @@ public class ClienteCollection {
         c3.setNome("Mario Jorge Lobo Zagallo");
         System.out.println("> " + c3);
 
-        List<Cliente> cList = new ArrayList<>();
-        cList.add(c1);
-        cList.add(c2);
-        cList.add(c3);
-        return cList;
+        return Arrays.asList(c1, c2, c3);
     }
 
 }

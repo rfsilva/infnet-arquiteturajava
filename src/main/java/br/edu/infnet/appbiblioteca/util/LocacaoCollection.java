@@ -1,13 +1,12 @@
 package br.edu.infnet.appbiblioteca.util;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Cliente;
 import br.edu.infnet.appbiblioteca.model.domain.Livro;
 import br.edu.infnet.appbiblioteca.model.domain.Locacao;
-import br.edu.infnet.appbiblioteca.model.domain.Material;
 import br.edu.infnet.appbiblioteca.model.domain.Midia;
 import br.edu.infnet.appbiblioteca.model.domain.Periodico;
 
@@ -52,44 +51,28 @@ public class LocacaoCollection {
         periodico.setTotalPaginas(32);
         periodico.setValor(Double.valueOf("3.99"));
         
-        List<Material> ml1 = new ArrayList<>();
-        ml1.add(midia);
-        ml1.add(livro);
-        
-        List<Material> ml2 = new ArrayList<>();
-        ml2.add(midia);
-        ml2.add(periodico);
-        
-        List<Material> ml3 = new ArrayList<>();
-        ml3.add(livro);
-        ml3.add(periodico);
-        
         Locacao l1 = new Locacao();
         l1.setCliente(cliente);
         l1.setDescricao("Locação de Livros");
         l1.setWeb(false);
-        l1.setMateriais(ml1);
+        l1.setMateriais(Arrays.asList(midia, livro));
         System.out.println("> " + l1);
 
         Locacao l2 = new Locacao();
         l2.setCliente(cliente);
         l2.setDescricao("Locação de Mídias");
         l2.setWeb(true);
-        l2.setMateriais(ml2);
+        l2.setMateriais(Arrays.asList(midia, periodico));
         System.out.println("> " + l2);
 
         Locacao l3 = new Locacao();
         l3.setCliente(cliente);
         l3.setDescricao("Locação de Periódicos");
         l3.setWeb(true);
-        l3.setMateriais(ml3);
+        l3.setMateriais(Arrays.asList(livro, periodico));
         System.out.println("> " + l3);
         
-        List<Locacao> list = new ArrayList<>();
-        list.add(l1);
-        list.add(l2);
-        list.add(l3);
-        return list;
+        return Arrays.asList(l1, l2, l3);
     }
 
 }
