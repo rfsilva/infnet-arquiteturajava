@@ -31,7 +31,7 @@ public class Periodico extends Material {
         builder.append(super.toString())
             .append(editora).append(";")
             .append(abrangencia).append(";")
-            .append(totalPaginas).append(";");
+            .append(totalPaginas);
         return builder.toString();
     }
 

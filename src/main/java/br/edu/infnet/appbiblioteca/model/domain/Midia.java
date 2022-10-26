@@ -46,7 +46,7 @@ public class Midia extends Material {
             .append(tipo).append(";")
             .append(raro).append(";")
             .append(fabricante).append(";")
-            .append(anoFabricacao).append(";");
+            .append(anoFabricacao);
         return builder.toString();
     }
 }

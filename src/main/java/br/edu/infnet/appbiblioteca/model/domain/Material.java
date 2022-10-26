@@ -1,6 +1,5 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public abstract class Material {
@@ -9,8 +8,6 @@ public abstract class Material {
     private String descricao;
     private Double valor;
     private LocalDate dataPublicacao;
-    
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     
     public String getNome() {
         return nome;
@@ -41,7 +38,8 @@ public abstract class Material {
         StringBuilder builder = new StringBuilder();
         builder.append(nome).append(";")
             .append(descricao).append(";")
-            .append(sdf.format(dataPublicacao)).append(";");
+            .append(dataPublicacao).append(";")
+            .append(valor);
         return builder.toString();
     }
     

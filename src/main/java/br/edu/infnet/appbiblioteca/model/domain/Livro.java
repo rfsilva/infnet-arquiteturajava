@@ -31,7 +31,7 @@ public class Livro extends Material {
         builder.append(super.toString())
             .append(autor).append(";")
             .append(totalPaginas).append(";")
-            .append(editora).append(";");
+            .append(editora);
         return builder.toString();
     }
 
