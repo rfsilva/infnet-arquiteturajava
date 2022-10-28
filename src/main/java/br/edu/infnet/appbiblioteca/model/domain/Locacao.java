@@ -6,20 +6,28 @@ import java.util.List;
 
 public class Locacao {
 
+    private Integer id;
     private String descricao;
-    private LocalDateTime data;
+    private LocalDateTime dataLocacao;
     private Boolean web;
     private Cliente cliente;
     private List<Material> materiais;
     
     public Locacao() {
         materiais = new ArrayList<>();
-        this.data = LocalDateTime.now();
+        this.dataLocacao = LocalDateTime.now();
     }
     
     public Locacao(Cliente cliente) {
         this();
         this.cliente = cliente;
+    }
+    
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
     }
     
     public String getDescricao() {
@@ -28,11 +36,11 @@ public class Locacao {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public LocalDateTime getData() {
-        return data;
+    public LocalDateTime getDataLocacao() {
+        return dataLocacao;
     }
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setDataLocacao(LocalDateTime data) {
+        this.dataLocacao = data;
     }
     public Boolean getWeb() {
         return web;
@@ -56,8 +64,9 @@ public class Locacao {
     @Override
     public String toString() {
         return new StringBuilder()
+                .append(id).append(";")
                 .append(descricao).append(";")
-                .append(data).append(";")
+                .append(dataLocacao).append(";")
                 .append(web).append(";")
                 .append(cliente).append(";")
                 .append(materiais.size())

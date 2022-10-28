@@ -8,9 +8,10 @@ import br.edu.infnet.appbiblioteca.model.domain.Cliente;
 
 public class ClienteCollection {
 
-    public static List<Cliente> get() {
+    public static List<Cliente> get(Integer id) {
 
         Cliente c1 = new Cliente();
+        c1.setId(id++);
         c1.setAtivo(true);
         c1.setCpf("12345678909");
         c1.setDataNascimento(LocalDate.of(1980, 2, 10));
@@ -20,6 +21,7 @@ public class ClienteCollection {
         System.out.println("> " + c1);
 
         Cliente c2 = new Cliente();
+        c2.setId(id++);
         c2.setAtivo(true);
         c2.setCpf("23456789010");
         c2.setDataNascimento(LocalDate.of(1992, 10, 21));
@@ -29,6 +31,7 @@ public class ClienteCollection {
         System.out.println("> " + c2);
 
         Cliente c3 = new Cliente();
+        c3.setId(id++);
         c3.setAtivo(false);
         c3.setCpf("34567890121");
         c3.setDataNascimento(LocalDate.of(2001, 3, 17));

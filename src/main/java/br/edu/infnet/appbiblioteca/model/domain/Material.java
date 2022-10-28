@@ -4,11 +4,18 @@ import java.time.LocalDate;
 
 public abstract class Material {
 
+    private Integer id;
     private String nome;
     private String descricao;
     private Double valor;
     private LocalDate dataPublicacao;
     
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getNome() {
         return nome;
     }
@@ -33,14 +40,17 @@ public abstract class Material {
     public void setDataPublicacao(LocalDate dataPublicacao) {
         this.dataPublicacao = dataPublicacao;
     }
+    public abstract String getTipoMaterial();
+    
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(nome).append(";")
-            .append(descricao).append(";")
-            .append(dataPublicacao).append(";")
-            .append(valor);
-        return builder.toString();
+        return new StringBuilder()
+                .append(id).append(";")
+                .append(nome).append(";")
+                .append(getTipoMaterial()).append(";")
+                .append(descricao).append(";")
+                .append(dataPublicacao).append(";")
+                .append(valor).toString();
     }
     
     

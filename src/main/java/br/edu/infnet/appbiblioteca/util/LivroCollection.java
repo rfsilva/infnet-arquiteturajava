@@ -8,10 +8,11 @@ import br.edu.infnet.appbiblioteca.model.domain.Livro;
 
 public class LivroCollection {
 
-    public static List<Livro> get() {
+    public static List<Livro> get(Integer id) {
         System.out.println("## Cadastramento de Livros ##");
 
         Livro l1 = new Livro();
+        l1.setId(id++);
         l1.setAutor("Robert C. Martin");
         l1.setDataPublicacao(LocalDate.of(2015, 4, 10));
         l1.setDescricao("Desenvolvimento Ágil Limpo");
@@ -22,6 +23,7 @@ public class LivroCollection {
         System.out.println("> " + l1);
 
         Livro l2 = new Livro();
+        l2.setId(id++);
         l2.setAutor("Pedro Waengertner");
         l2.setDataPublicacao(LocalDate.of(2017, 12, 21));
         l2.setDescricao("A Estratégia da Inovação Radical");
@@ -32,6 +34,7 @@ public class LivroCollection {
         System.out.println("> " + l2);
 
         Livro l3 = new Livro();
+        l3.setId(id++);
         l3.setAutor("Kim Scott");
         l3.setDataPublicacao(LocalDate.of(2019, 1, 22));
         l3.setDescricao("Empatia Assertiva");

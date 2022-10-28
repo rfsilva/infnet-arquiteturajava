@@ -15,6 +15,7 @@ public class MaterialCollection {
         System.out.println("## Cadastramento de Materiais ##");
 
         Midia m1 = new Midia();
+        m1.setId(1);
         m1.setAnoFabricacao(2001);
         m1.setDataPublicacao(LocalDate.of(2000, 1, 11));
         m1.setDescricao("Mapa Político Mundo");
@@ -26,6 +27,7 @@ public class MaterialCollection {
         System.out.println("> " + m1);
 
         Livro l1 = new Livro();
+        l1.setId(1);
         l1.setAutor("Robert C. Martin");
         l1.setDataPublicacao(LocalDate.of(2015, 2, 10));
         l1.setDescricao("Desenvolvimento Ágil Limpo");
@@ -36,6 +38,7 @@ public class MaterialCollection {
         System.out.println("> " + l1);
 
         Periodico p1 = new Periodico();
+        p1.setId(1);
         p1.setAbrangencia("NACIONAL");
         p1.setDataPublicacao(LocalDate.of(2014, 7, 1));
         p1.setDescricao("Edição 01/04/2014");

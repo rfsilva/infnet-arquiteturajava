@@ -13,7 +13,7 @@ public class MidiaTeste implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        MidiaCollection.get().stream().forEach(m -> {
+        MidiaCollection.get(1).stream().forEach(m -> {
             System.out.println("> " + m);
         });
     }

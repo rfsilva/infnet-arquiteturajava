@@ -13,7 +13,7 @@ public class ClienteTeste implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        ClienteCollection.get().stream().forEach(m -> {
+        ClienteCollection.get(1).stream().forEach(m -> {
             System.out.println("> " + m);
         });
     }

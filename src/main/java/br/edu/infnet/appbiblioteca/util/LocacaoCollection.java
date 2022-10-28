@@ -12,10 +12,11 @@ import br.edu.infnet.appbiblioteca.model.domain.Periodico;
 
 public class LocacaoCollection {
 
-    public static List<Locacao> get() {
+    public static List<Locacao> get(Integer id) {
         System.out.println("## Cadastramento de Locações ##");
 
         Cliente cliente = new Cliente();
+        cliente.setId(1);
         cliente.setAtivo(true);
         cliente.setCpf("12345678909");
         cliente.setDataNascimento(LocalDate.of(1980, 2, 10));
@@ -24,6 +25,7 @@ public class LocacaoCollection {
         cliente.setNome("Carlos Alberto de Nóbrega");
 
         Midia midia = new Midia();
+        midia.setId(1);
         midia.setAnoFabricacao(2001);
         midia.setDataPublicacao(LocalDate.of(2000, 1, 11));
         midia.setDescricao("Mapa Político Mundo");
@@ -34,6 +36,7 @@ public class LocacaoCollection {
         midia.setValor(Double.valueOf("32.99"));
 
         Livro livro = new Livro();
+        livro.setId(1);
         livro.setAutor("Robert C. Martin");
         livro.setDataPublicacao(LocalDate.of(2015, 2, 10));
         livro.setDescricao("Desenvolvimento Ágil Limpo");
@@ -43,6 +46,7 @@ public class LocacaoCollection {
         livro.setValor(Double.valueOf("4.99"));
 
         Periodico periodico = new Periodico();
+        periodico.setId(1);
         periodico.setAbrangencia("NACIONAL");
         periodico.setDataPublicacao(LocalDate.of(2014, 7, 1));
         periodico.setDescricao("Edição 01/04/2014");
@@ -52,6 +56,7 @@ public class LocacaoCollection {
         periodico.setValor(Double.valueOf("3.99"));
         
         Locacao l1 = new Locacao();
+        l1.setId(id++);
         l1.setCliente(cliente);
         l1.setDescricao("Locação de Livros");
         l1.setWeb(false);
@@ -59,6 +64,7 @@ public class LocacaoCollection {
         System.out.println("> " + l1);
 
         Locacao l2 = new Locacao();
+        l2.setId(id++);
         l2.setCliente(cliente);
         l2.setDescricao("Locação de Mídias");
         l2.setWeb(true);
@@ -66,6 +72,7 @@ public class LocacaoCollection {
         System.out.println("> " + l2);
 
         Locacao l3 = new Locacao();
+        l3.setId(id++);
         l3.setCliente(cliente);
         l3.setDescricao("Locação de Periódicos");
         l3.setWeb(true);

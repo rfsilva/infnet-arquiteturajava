@@ -8,10 +8,11 @@ import br.edu.infnet.appbiblioteca.model.domain.Midia;
 
 public class MidiaCollection {
 
-    public static List<Midia> get() {
+    public static List<Midia> get(Integer id) {
         System.out.println("## Cadastramento de Mídias ##");
 
         Midia m1 = new Midia();
+        m1.setId(id++);
         m1.setAnoFabricacao(2001);
         m1.setDataPublicacao(LocalDate.of(2000, 4, 11));
         m1.setDescricao("Mapa Político Mundo");
@@ -23,6 +24,7 @@ public class MidiaCollection {
         System.out.println("> " + m1);
 
         Midia m2 = new Midia();
+        m2.setId(id++);
         m2.setAnoFabricacao(1998);
         m2.setDataPublicacao(LocalDate.of(1998, 6, 9));
         m2.setDescricao("CD Acústico Duplo de Lulu Santos");
@@ -34,6 +36,7 @@ public class MidiaCollection {
         System.out.println("> " + m2);
 
         Midia m3 = new Midia();
+        m3.setId(id++);
         m3.setAnoFabricacao(2005);
         m3.setDataPublicacao(LocalDate.of(2005, 9, 28));
         m3.setDescricao("Trajetória do São Paulo na Libertadores de 2005");

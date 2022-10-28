@@ -6,6 +6,10 @@ public class Periodico extends Material {
     private String abrangencia;
     private Integer totalPaginas;
     
+    public String getTipoMaterial() {
+        return "PERIÓDICO";
+    }
+    
     public String getEditora() {
         return editora;
     }
@@ -29,6 +33,7 @@ public class Periodico extends Material {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString())
+            .append(getId()).append(";")
             .append(editora).append(";")
             .append(abrangencia).append(";")
             .append(totalPaginas);

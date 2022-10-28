@@ -7,6 +7,10 @@ public class Midia extends Material {
     private String fabricante;
     private Integer anoFabricacao;
     
+    public String getTipoMaterial() {
+        return "MIDIA";
+    }
+    
     public String getTipo() {
         return tipo;
     }
@@ -43,6 +47,7 @@ public class Midia extends Material {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString())
+            .append(getId()).append(";")
             .append(tipo).append(";")
             .append(raro).append(";")
             .append(fabricante).append(";")

@@ -10,7 +10,7 @@ import br.edu.infnet.appbiblioteca.util.MaterialCollection;
 public class MaterialController {
 
     @GetMapping("/material/lista")
-    public String telaLista(Model model) {
+    public String list(Model model) {
         model.addAttribute("listagem", MaterialCollection.get());
         return "material/lista";
     }

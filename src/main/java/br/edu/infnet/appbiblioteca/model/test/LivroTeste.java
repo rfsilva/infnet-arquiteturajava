@@ -13,7 +13,7 @@ public class LivroTeste implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        LivroCollection.get().stream().forEach(m -> {
+        LivroCollection.get(1).stream().forEach(m -> {
             System.out.println("> " + m);
         });
     }

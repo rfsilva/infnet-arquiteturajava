@@ -13,7 +13,7 @@ public class PeriodicoTeste implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        PeriodicoCollection.get().stream().forEach(m -> {
+        PeriodicoCollection.get(1).stream().forEach(m -> {
             System.out.println("> " + m);
         });
     }

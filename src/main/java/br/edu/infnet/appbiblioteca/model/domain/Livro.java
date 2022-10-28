@@ -6,6 +6,10 @@ public class Livro extends Material {
     private Integer totalPaginas;
     private String editora;
     
+    public String getTipoMaterial() {
+        return "LIVRO";
+    }
+    
     public String getAutor() {
         return autor;
     }
@@ -29,6 +33,7 @@ public class Livro extends Material {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString())
+            .append(getId()).append(";")
             .append(autor).append(";")
             .append(totalPaginas).append(";")
             .append(editora);
