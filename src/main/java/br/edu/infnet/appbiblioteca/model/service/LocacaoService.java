@@ -1,4 +1,4 @@
-package br.edu.infnet.appbiblioteca.service;
+package br.edu.infnet.appbiblioteca.model.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,28 +14,32 @@ import br.edu.infnet.appbiblioteca.util.LocacaoCollection;
 public class LocacaoService {
 
     private static Integer id = 1;
-    private static Map<Integer, Locacao> locacaoMap = new HashMap<Integer, Locacao>();
+    private static Map<Integer, Locacao> map = new HashMap<Integer, Locacao>();
     
     public LocacaoService() {
         LocacaoCollection.get(id).stream().forEach(l -> {
-            locacaoMap.put(l.getId(), l);
+            map.put(l.getId(), l);
         });
     }
     
     public List<Locacao> list() {
-        return locacaoMap.values().stream().collect(Collectors.toList());
+        return map.values().stream().collect(Collectors.toList());
+    }
+
+    public Locacao findById(Integer id) {
+        return map.get(id);
     }
 
     public void add(Locacao locacao) {
         locacao.setId(id++);
-        locacaoMap.put(locacao.getId(), locacao);
+        map.put(locacao.getId(), locacao);
     }
     
     public void update(Locacao locacao) {
-        locacaoMap.put(locacao.getId(), locacao);
+        map.put(locacao.getId(), locacao);
     }
     
     public void remove(Integer id) {
-        locacaoMap.remove(id);
+        map.remove(id);
     }
 }

@@ -1,5 +1,10 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_periodico")
 public class Periodico extends Material {
 
     private String editora;

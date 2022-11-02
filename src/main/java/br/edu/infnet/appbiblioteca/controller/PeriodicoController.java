@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import br.edu.infnet.appbiblioteca.service.PeriodicoService;
+import br.edu.infnet.appbiblioteca.model.service.PeriodicoService;
 
 @Controller
 public class PeriodicoController {
