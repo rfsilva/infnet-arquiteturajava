@@ -1,6 +1,8 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +12,10 @@ public class Periodico extends Material {
     private String editora;
     private String abrangencia;
     private Integer totalPaginas;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
     
     public String getTipoMaterial() {
         return "PERIÓDICO";
@@ -34,6 +40,14 @@ public class Periodico extends Material {
         this.totalPaginas = totalPaginas;
     }
     
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

@@ -6,19 +6,19 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appbiblioteca.model.service.ClienteService;
-import br.edu.infnet.appbiblioteca.util.ClienteCollection;
+import br.edu.infnet.appbiblioteca.model.service.UsuarioService;
+import br.edu.infnet.appbiblioteca.util.UsuarioCollection;
 
-@Order(2)
+@Order(1)
 @Component
-public class ClienteTeste implements ApplicationRunner {
+public class UsuarioTeste implements ApplicationRunner {
     
     @Autowired
-    private ClienteService service;
+    private UsuarioService service;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        ClienteCollection.get(1).stream().forEach(m -> {
+        UsuarioCollection.get().stream().forEach(m -> {
             service.add(m);
             System.out.println("> " + m);
         });

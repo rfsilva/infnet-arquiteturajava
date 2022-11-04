@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appbiblioteca.model.service.PeriodicoService;
 import br.edu.infnet.appbiblioteca.util.PeriodicoCollection;
 
-@Order(4)
+@Order(6)
 @Component
 public class PeriodicoTeste implements ApplicationRunner {
 

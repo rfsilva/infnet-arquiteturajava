@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appbiblioteca.model.service.MidiaService;
 import br.edu.infnet.appbiblioteca.util.MidiaCollection;
 
-@Order(3)
+@Order(5)
 @Component
 public class MidiaTeste implements ApplicationRunner {
     

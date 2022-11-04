@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appbiblioteca.model.service.LivroService;
 import br.edu.infnet.appbiblioteca.util.LivroCollection;
 
-@Order(2)
+@Order(4)
 @Component
 public class LivroTeste implements ApplicationRunner {
     

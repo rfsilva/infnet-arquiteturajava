@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appbiblioteca.model.service.LocacaoService;
 import br.edu.infnet.appbiblioteca.util.LocacaoCollection;
 
-@Order(6)
+@Order(7)
 @Component
 public class LocacaoTeste implements ApplicationRunner {
     

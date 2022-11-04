@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appbiblioteca.model.service.MaterialService;
 import br.edu.infnet.appbiblioteca.util.MaterialCollection;
 
-@Order(5)
+@Order(3)
 @Component
 public class MaterialTeste implements ApplicationRunner {
     

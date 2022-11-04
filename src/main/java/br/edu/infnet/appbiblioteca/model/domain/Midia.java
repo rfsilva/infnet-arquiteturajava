@@ -1,6 +1,8 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +13,10 @@ public class Midia extends Material {
     private Boolean raro;
     private String fabricante;
     private Integer anoFabricacao;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
     
     public String getTipoMaterial() {
         return "MIDIA";
@@ -46,6 +52,14 @@ public class Midia extends Material {
 
     public void setAnoFabricacao(Integer anoFabricacao) {
         this.anoFabricacao = anoFabricacao;
+    }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

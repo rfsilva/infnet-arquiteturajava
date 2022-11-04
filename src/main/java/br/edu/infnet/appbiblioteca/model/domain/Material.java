@@ -6,10 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_material")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Material {
 
     @Id
@@ -19,6 +24,10 @@ public abstract class Material {
     private String descricao;
     private Double valor;
     private LocalDate dataPublicacao;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
     
     public Integer getId() {
         return id;
@@ -49,6 +58,14 @@ public abstract class Material {
     }
     public void setDataPublicacao(LocalDate dataPublicacao) {
         this.dataPublicacao = dataPublicacao;
+    }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public abstract String getTipoMaterial();
     

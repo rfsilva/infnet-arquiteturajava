@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +23,10 @@ public class Cliente {
     private LocalDate dataNascimento;
     private String endereco;
     private Boolean ativo;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
     
     public Integer getId() {
         return id;
@@ -66,6 +72,12 @@ public class Cliente {
         this.ativo = ativo;
     }
     
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
     @Override
     public String toString() {
         return new StringBuilder()
