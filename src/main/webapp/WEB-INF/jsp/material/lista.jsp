@@ -24,6 +24,7 @@
 					<th>Descrição</th>
 					<th>Valor</th>
 					<th>Data de Publicação</th>
+					<th>Usuário</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,6 +36,7 @@
 					<td>${b.descricao}</td>
 					<td>${b.valor}</td>
 					<td>${b.dataPublicacao}</td>
+					<td>${b.usuario.nome}</td>
 				</tr>
 				</c:forEach>
 			</tbody>

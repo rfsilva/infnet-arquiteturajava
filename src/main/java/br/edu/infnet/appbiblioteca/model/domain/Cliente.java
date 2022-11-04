@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "tb_cliente")
 public class Cliente {
@@ -20,6 +22,7 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String email;
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private LocalDate dataNascimento;
     private String endereco;
     private Boolean ativo;

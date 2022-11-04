@@ -24,7 +24,8 @@
 					<th>E-mail</th>
 					<th>Data de Nascimento</th>
 					<th>Endereço</th>
-					<th>Status</th>
+					<th>Ativo?</th>
+					<th>Usuário</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -38,6 +39,7 @@
 					<td>${b.dataNascimento}</td>
 					<td>${b.endereco}</td>
 					<td>${b.ativo}</td>
+					<td>${b.usuario.nome}</td>
 					<td><a href="/cliente/${b.id}/excluir">Excluir</a>
 				</tr>
 				</c:forEach>

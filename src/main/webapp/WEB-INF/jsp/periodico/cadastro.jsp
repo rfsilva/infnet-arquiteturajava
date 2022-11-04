@@ -6,25 +6,25 @@
 <head>
 	<meta charset="ISO-8859-1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<title>Cadastramento de Usuários</title>
+	<title>Cadastramento de Periódicos</title>
 </head>
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container mt-3">
 		<h2>Cadastro</h2>
-		<form action="/usuario/incluir" method="post">
+		<form action="/periodico/incluir" method="post">
 			<div class="form-group">
-				<label for="nome">Nome:</label>
-				<input type="text" class="form-control" id="nome" placeholder="Entre com o nome" name="nome">
+				<label for="editora">Editora:</label>
+				<input type="text" class="form-control" id="editora" placeholder="Entre com a editora" name="editora">
 			</div>
 			<div class="form-group">
-				<label for="email">Email:</label>
-				<input type="text" class="form-control" id="email" placeholder="Entre com o e-mail" name="email">
+				<label for="abrangencia">Abrangência:</label>
+				<input type="text" class="form-control" id="abrangencia" name="abrangencia">
 			</div>
 			<div class="form-group">
-				<label for="senha">Senha:</label>
-				<input type="password" class="form-control" id="senha" placeholder="Entre com a senha" name="senha">
+				<label for="totalPaginas">Número de Páginas:</label>
+				<input type="text" class="form-control" id="totalPaginas" placeholder="Entre com o número de páginas" name="totalPaginas">
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>

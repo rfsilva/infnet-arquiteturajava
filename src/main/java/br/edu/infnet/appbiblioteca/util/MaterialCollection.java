@@ -8,11 +8,15 @@ import br.edu.infnet.appbiblioteca.model.domain.Livro;
 import br.edu.infnet.appbiblioteca.model.domain.Material;
 import br.edu.infnet.appbiblioteca.model.domain.Midia;
 import br.edu.infnet.appbiblioteca.model.domain.Periodico;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class MaterialCollection {
 
     public static List<Material> get() {
         System.out.println("## Cadastramento de Materiais ##");
+
+        Usuario u = new Usuario();
+        u.setId(1);
 
         Midia m1 = new Midia();
         m1.setId(1);
@@ -24,6 +28,7 @@ public class MaterialCollection {
         m1.setRaro(false);
         m1.setTipo("MAPA");
         m1.setValor(Double.valueOf("32.99"));
+        m1.setUsuario(u);
         System.out.println("> " + m1);
 
         Livro l1 = new Livro();
@@ -35,6 +40,7 @@ public class MaterialCollection {
         l1.setNome("Desenvolvimento Ágil Limpo");
         l1.setTotalPaginas(486);
         l1.setValor(Double.valueOf("4.99"));
+        l1.setUsuario(u);
         System.out.println("> " + l1);
 
         Periodico p1 = new Periodico();
@@ -46,6 +52,7 @@ public class MaterialCollection {
         p1.setNome("Jornal Folha de S. Paulo");
         p1.setTotalPaginas(32);
         p1.setValor(Double.valueOf("3.99"));
+        p1.setUsuario(u);
         System.out.println("> " + p1);
         
         return Arrays.asList(m1, l1, p1);

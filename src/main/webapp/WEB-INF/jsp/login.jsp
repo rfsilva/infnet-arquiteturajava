@@ -13,12 +13,13 @@
 	<div class="container mt-3">
 		<h2>Autenticação</h2>
 		<form action="/login" method="post">
-			<div class="mb-3 mt-3">
-				<label for="email">Email:</label> <input type="text"
-					class="form-control" id="email" placeholder="Entre com o e-mail" name="email">
+			<div class="form-group">
+				<label>Email:</label> 
+				<input type="text" class="form-control" id="email" placeholder="Entre com o e-mail" name="email">
 			</div>
-			<div class="mb-3">
-				<label for="senha">Senha:</label> <input type="password" class="form-control" id="senha" placeholder="Entre com a senha" name="senha">
+			<div class="form-group">
+				<label>Senha:</label>
+				<input type="password" class="form-control" id="senha" placeholder="Entre com a senha" name="senha">
 			</div>
 			<button type="submit" class="btn btn-primary">Entrar</button>
 		</form>

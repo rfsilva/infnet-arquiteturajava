@@ -9,11 +9,15 @@ import br.edu.infnet.appbiblioteca.model.domain.Livro;
 import br.edu.infnet.appbiblioteca.model.domain.Locacao;
 import br.edu.infnet.appbiblioteca.model.domain.Midia;
 import br.edu.infnet.appbiblioteca.model.domain.Periodico;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class LocacaoCollection {
 
     public static List<Locacao> get(Integer id) {
         System.out.println("## Cadastramento de Locações ##");
+
+        Usuario usuario = new Usuario();
+        usuario.setId(1);
 
         Cliente cliente = new Cliente();
         cliente.setId(1);
@@ -23,6 +27,7 @@ public class LocacaoCollection {
         cliente.setEmail("nobrega@nobrega.com.br");
         cliente.setEndereco("Rua dos Tupinambás, 330, São Paulo-SP");
         cliente.setNome("Carlos Alberto de Nóbrega");
+        cliente.setUsuario(usuario);
 
         Midia midia = new Midia();
         midia.setId(1);
@@ -34,6 +39,7 @@ public class LocacaoCollection {
         midia.setRaro(false);
         midia.setTipo("MAPA");
         midia.setValor(Double.valueOf("32.99"));
+        midia.setUsuario(usuario);
 
         Livro livro = new Livro();
         livro.setId(1);
@@ -44,6 +50,7 @@ public class LocacaoCollection {
         livro.setNome("Desenvolvimento Ágil Limpo");
         livro.setTotalPaginas(486);
         livro.setValor(Double.valueOf("4.99"));
+        livro.setUsuario(usuario);
 
         Periodico periodico = new Periodico();
         periodico.setId(1);
@@ -54,6 +61,7 @@ public class LocacaoCollection {
         periodico.setNome("Jornal Folha de S. Paulo");
         periodico.setTotalPaginas(32);
         periodico.setValor(Double.valueOf("3.99"));
+        periodico.setUsuario(usuario);
         
         Locacao l1 = new Locacao();
         l1.setId(id++);

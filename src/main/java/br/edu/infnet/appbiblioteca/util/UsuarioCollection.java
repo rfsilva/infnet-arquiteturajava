@@ -13,7 +13,7 @@ public class UsuarioCollection {
         u1.setId(1);
         u1.setEmail("admin@admin.com.br");
         u1.setNome("Administrador");
-        u1.setSenha("123456");
+        u1.setSenha("sistema123");
         System.out.println("> " + u1);
 
         return Arrays.asList(u1);

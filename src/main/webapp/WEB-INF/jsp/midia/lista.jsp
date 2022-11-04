@@ -27,6 +27,7 @@
 					<th>Raro?</th>
 					<th>Fabricante</th>
 					<th>Ano de Fabricação</th>
+					<th>Usuário</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -42,6 +43,7 @@
 					<td>${b.raro}</td>
 					<td>${b.fabricante}</td>
 					<td>${b.anoFabricacao}</td>
+					<td>${b.usuario.nome}</td>
 					<td><a href="/midia/${b.id}/excluir">Excluir</a>
 				</tr>
 				</c:forEach>

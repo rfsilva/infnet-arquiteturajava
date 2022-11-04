@@ -5,11 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Livro;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class LivroCollection {
 
     public static List<Livro> get(Integer id) {
         System.out.println("## Cadastramento de Livros ##");
+
+        Usuario u = new Usuario();
+        u.setId(1);
 
         Livro l1 = new Livro();
         l1.setId(id++);
@@ -20,6 +24,7 @@ public class LivroCollection {
         l1.setNome("Desenvolvimento Ágil Limpo");
         l1.setTotalPaginas(486);
         l1.setValor(Double.valueOf("4.99"));
+        l1.setUsuario(u);
         System.out.println("> " + l1);
 
         Livro l2 = new Livro();
@@ -31,6 +36,7 @@ public class LivroCollection {
         l2.setNome("A Estratégia da Inovação Radical");
         l2.setTotalPaginas(398);
         l2.setValor(Double.valueOf("4.99"));
+        l2.setUsuario(u);
         System.out.println("> " + l2);
 
         Livro l3 = new Livro();
@@ -42,6 +48,7 @@ public class LivroCollection {
         l3.setNome("Empatia Assertiva");
         l3.setTotalPaginas(388);
         l3.setValor(Double.valueOf("6.99"));
+        l3.setUsuario(u);
         System.out.println("> " + l3);
         
         return Arrays.asList(l1, l2, l3);

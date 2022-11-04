@@ -26,6 +26,7 @@
 					<th>Autor</th>
 					<th>Nro. Páginas</th>
 					<th>Editora</th>
+					<th>Usuário</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -40,6 +41,7 @@
 					<td>${b.autor}</td>
 					<td>${b.totalPaginas}</td>
 					<td>${b.editora}</td>
+					<td>${b.usuario.nome}</td>
 					<td><a href="/livro/${b.id}/excluir">Excluir</a>
 				</tr>
 				</c:forEach>

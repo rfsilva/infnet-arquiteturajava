@@ -26,6 +26,7 @@
 					<th>Editora</th>
 					<th>Abrangência</th>
 					<th>Nro. Páginas</th>
+					<th>Usuário</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -40,6 +41,7 @@
 					<td>${b.editora}</td>
 					<td>${b.abrangencia}</td>
 					<td>${b.totalPaginas}</td>
+					<td>${b.usuario.nome}</td>
 					<td><a href="/periodico/${b.id}/excluir">Excluir</a>
 				</tr>
 				</c:forEach>

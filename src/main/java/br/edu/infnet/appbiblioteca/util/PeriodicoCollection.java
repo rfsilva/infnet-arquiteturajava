@@ -5,11 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Periodico;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class PeriodicoCollection {
 
     public static List<Periodico> get(Integer id) {
         System.out.println("## Cadastramento de Periódicos ##");
+
+        Usuario u = new Usuario();
+        u.setId(1);
 
         Periodico p1 = new Periodico();
         p1.setId(id++);
@@ -20,6 +24,7 @@ public class PeriodicoCollection {
         p1.setNome("Jornal Folha de S. Paulo");
         p1.setTotalPaginas(32);
         p1.setValor(Double.valueOf("3.99"));
+        p1.setUsuario(u);
         System.out.println("> " + p1);
 
         Periodico p2 = new Periodico();
@@ -31,6 +36,7 @@ public class PeriodicoCollection {
         p2.setNome("Jornal O Globo");
         p2.setTotalPaginas(26);
         p2.setValor(Double.valueOf("3.99"));
+        p2.setUsuario(u);
         System.out.println("> " + p2);
 
         Periodico p3 = new Periodico();
@@ -42,6 +48,7 @@ public class PeriodicoCollection {
         p3.setNome("Jornal Do Commercio");
         p3.setTotalPaginas(14);
         p3.setValor(Double.valueOf("2.99"));
+        p3.setUsuario(u);
         System.out.println("> " + p3);
         
         return Arrays.asList(p1, p2, p3);

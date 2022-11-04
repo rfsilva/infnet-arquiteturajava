@@ -5,11 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Midia;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class MidiaCollection {
 
     public static List<Midia> get(Integer id) {
         System.out.println("## Cadastramento de Mídias ##");
+
+        Usuario u = new Usuario();
+        u.setId(1);
 
         Midia m1 = new Midia();
         m1.setId(id++);
@@ -21,6 +25,7 @@ public class MidiaCollection {
         m1.setRaro(false);
         m1.setTipo("MAPA");
         m1.setValor(Double.valueOf("32.99"));
+        m1.setUsuario(u);
         System.out.println("> " + m1);
 
         Midia m2 = new Midia();
@@ -33,6 +38,7 @@ public class MidiaCollection {
         m2.setRaro(false);
         m2.setTipo("CD");
         m2.setValor(Double.valueOf("44.90"));
+        m2.setUsuario(u);
         System.out.println("> " + m2);
 
         Midia m3 = new Midia();
@@ -45,6 +51,7 @@ public class MidiaCollection {
         m3.setRaro(true);
         m3.setTipo("DVD");
         m3.setValor(Double.valueOf("149.99"));
+        m3.setUsuario(u);
         System.out.println("> " + m3);
         
         return Arrays.asList(m1, m2, m3);
