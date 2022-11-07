@@ -14,6 +14,7 @@
 	<div class="container mt-3">
 		<h2>Cadastro</h2>
 		<form action="/livro/incluir" method="post">
+			<c:import url="/WEB-INF/jsp/material/camposcadastro.jsp"/>
 			<div class="form-group">
 				<label for="autor">Autor:</label>
 				<input type="text" class="form-control" id="autor" placeholder="Entre com o autor" name="autor">

@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "tb_material")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -23,6 +25,7 @@ public abstract class Material {
     private String nome;
     private String descricao;
     private Double valor;
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private LocalDate dataPublicacao;
     
     @ManyToOne
