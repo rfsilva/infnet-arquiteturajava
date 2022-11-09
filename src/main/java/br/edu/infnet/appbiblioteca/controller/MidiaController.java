@@ -19,8 +19,8 @@ public class MidiaController {
     private MidiaService midiaService;
 
     @GetMapping("/midia/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", midiaService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", midiaService.findByUsuario(usuario));
         return "midia/lista";
     }
     

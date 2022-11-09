@@ -69,6 +69,7 @@ public class LocacaoCollection {
         l1.setDescricao("Locação de Livros");
         l1.setWeb(false);
         l1.setMateriais(Arrays.asList(midia, livro));
+        l1.setUsuario(usuario);
         System.out.println("> " + l1);
 
         Locacao l2 = new Locacao();
@@ -77,6 +78,7 @@ public class LocacaoCollection {
         l2.setDescricao("Locação de Mídias");
         l2.setWeb(true);
         l2.setMateriais(Arrays.asList(midia, periodico));
+        l2.setUsuario(usuario);
         System.out.println("> " + l2);
 
         Locacao l3 = new Locacao();
@@ -85,6 +87,7 @@ public class LocacaoCollection {
         l3.setDescricao("Locação de Periódicos");
         l3.setWeb(true);
         l3.setMateriais(Arrays.asList(livro, periodico));
+        l3.setUsuario(usuario);
         System.out.println("> " + l3);
         
         return Arrays.asList(l1, l2, l3);

@@ -10,17 +10,25 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appbiblioteca.model.domain.Locacao;
 import br.edu.infnet.appbiblioteca.model.domain.Usuario;
+import br.edu.infnet.appbiblioteca.model.service.ClienteService;
 import br.edu.infnet.appbiblioteca.model.service.LocacaoService;
+import br.edu.infnet.appbiblioteca.model.service.MaterialService;
 
 @Controller
 public class LocacaoController {
     
     @Autowired
     private LocacaoService locacaoService;
+    
+    @Autowired
+    private ClienteService clienteService;
+    
+    @Autowired
+    private MaterialService materialService;
 
     @GetMapping("/locacao/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", locacaoService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", locacaoService.findByUsuario(usuario));
         return "locacao/lista";
     }
     
@@ -31,12 +39,17 @@ public class LocacaoController {
     }
 
     @GetMapping("/locacao")
-    public String cadastro(Model model) {
+    public String cadastro(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("materiais", materialService.findByUsuario(usuario));
+        model.addAttribute("clientes", clienteService.findByUsuario(usuario));
         return "locacao/cadastro";
     }
     
     @PostMapping("/locacao/incluir")
     public String incluir(Locacao locacao, @SessionAttribute("user") Usuario usuario) {
+        System.out.println("Cliente: " + locacao.getCliente());
+        System.out.println("Materiais: " + locacao.getMateriais());
+        locacao.setUsuario(usuario);
         locacaoService.add(locacao);
         return "redirect:/locacao/lista";
     }

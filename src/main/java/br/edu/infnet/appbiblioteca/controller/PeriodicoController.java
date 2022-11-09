@@ -19,8 +19,8 @@ public class PeriodicoController {
     private PeriodicoService periodicoService;
 
     @GetMapping("/periodico/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", periodicoService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", periodicoService.findByUsuario(usuario));
         return "periodico/lista";
     }
     

@@ -19,8 +19,8 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping("/cliente/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", clienteService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", clienteService.findByUsuario(usuario));
         return "cliente/lista";
     }
     

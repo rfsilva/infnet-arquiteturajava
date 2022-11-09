@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appbiblioteca.model.domain.Cliente;
+import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 import br.edu.infnet.appbiblioteca.model.repository.ClienteRepository;
 
 @Service
@@ -15,8 +16,8 @@ public class ClienteService {
     @Autowired
     private ClienteRepository repository;
     
-    public Collection<Cliente> list() {
-        return (Collection<Cliente>) repository.findAll();
+    public Collection<Cliente> findByUsuario(Usuario usuario) {
+        return (Collection<Cliente>) repository.findByUsuario(usuario.getId());
     }
 
     public Cliente findById(Integer id) {

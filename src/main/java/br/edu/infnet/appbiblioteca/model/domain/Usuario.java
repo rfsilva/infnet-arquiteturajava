@@ -2,11 +2,14 @@ package br.edu.infnet.appbiblioteca.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,20 +23,18 @@ public class Usuario {
     private String email;
     private String senha;
     
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_endereco")
+    private Endereco endereco;
+    
     @OneToMany(mappedBy = "usuario")
     private List<Cliente> clientes;
     
     @OneToMany(mappedBy = "usuario")
-    private List<Livro> livros;
+    private List<Locacao> locacoes;
     
     @OneToMany(mappedBy = "usuario")
     private List<Material> materiais;
-    
-    @OneToMany(mappedBy = "usuario")
-    private List<Midia> midias;
-    
-    @OneToMany(mappedBy = "usuario")
-    private List<Periodico> periodicos;
     
     public Integer getId() {
         return id;
@@ -66,11 +67,11 @@ public class Usuario {
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
     }
-    public List<Livro> getLivros() {
-        return livros;
+    public List<Locacao> getLocacoes() {
+        return locacoes;
     }
-    public void setLivros(List<Livro> livros) {
-        this.livros = livros;
+    public void setLocacoes(List<Locacao> locacoes) {
+        this.locacoes = locacoes;
     }
     public List<Material> getMateriais() {
         return materiais;
@@ -78,17 +79,11 @@ public class Usuario {
     public void setMateriais(List<Material> materiais) {
         this.materiais = materiais;
     }
-    public List<Midia> getMidias() {
-        return midias;
+    public Endereco getEndereco() {
+        return endereco;
     }
-    public void setMidias(List<Midia> midias) {
-        this.midias = midias;
-    }
-    public List<Periodico> getPeriodicos() {
-        return periodicos;
-    }
-    public void setPeriodicos(List<Periodico> periodicos) {
-        this.periodicos = periodicos;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
     @Override
     public String toString() {

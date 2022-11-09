@@ -19,8 +19,8 @@ public class MaterialController {
     private MaterialService materialService;
     
     @GetMapping("/material/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", materialService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", materialService.findByUsuario(usuario));
         return "material/lista";
     }
     

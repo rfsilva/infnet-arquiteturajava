@@ -19,8 +19,8 @@ public class LivroController {
     private LivroService livroService;
     
     @GetMapping("/livro/lista")
-    public String listar(Model model) {
-        model.addAttribute("listagem", livroService.list());
+    public String listar(Model model, @SessionAttribute("user") Usuario usuario) {
+        model.addAttribute("listagem", livroService.findByUsuario(usuario));
         return "livro/lista";
     }
     

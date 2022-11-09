@@ -1,6 +1,7 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -27,7 +29,8 @@ public abstract class Material {
     private Double valor;
     @DateTimeFormat(pattern="dd/MM/yyyy")
     private LocalDate dataPublicacao;
-    
+    @ManyToMany(mappedBy = "materiais")
+    private List<Locacao> locacoes;
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
@@ -63,6 +66,12 @@ public abstract class Material {
         this.dataPublicacao = dataPublicacao;
     }
     
+    public List<Locacao> getLocacoes() {
+        return locacoes;
+    }
+    public void setLocacoes(List<Locacao> locacoes) {
+        this.locacoes = locacoes;
+    }
     public Usuario getUsuario() {
         return usuario;
     }

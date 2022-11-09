@@ -1,6 +1,7 @@
 package br.edu.infnet.appbiblioteca.model.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,14 +24,19 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String email;
+    
     @DateTimeFormat(pattern="dd/MM/yyyy")
     private LocalDate dataNascimento;
+    
     private String endereco;
     private Boolean ativo;
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Locacao> locacoes;
     
     public Integer getId() {
         return id;
@@ -80,6 +87,12 @@ public class Cliente {
     }
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    public List<Locacao> getLocacoes() {
+        return locacoes;
+    }
+    public void setLocacoes(List<Locacao> locacoes) {
+        this.locacoes = locacoes;
     }
     @Override
     public String toString() {
