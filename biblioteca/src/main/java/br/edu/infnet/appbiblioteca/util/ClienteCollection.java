@@ -5,15 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.edu.infnet.appbiblioteca.model.domain.Cliente;
-import br.edu.infnet.appbiblioteca.model.domain.Usuario;
 
 public class ClienteCollection {
 
     public static List<Cliente> get(Integer id) {
 
-        Usuario u = new Usuario();
-        u.setId(1);
-        
         Cliente c1 = new Cliente();
         c1.setId(id++);
         c1.setAtivo(true);
@@ -22,7 +18,7 @@ public class ClienteCollection {
         c1.setEmail("nobrega@nobrega.com.br");
         c1.setEndereco("Rua dos Tupinambás, 330, São Paulo-SP");
         c1.setNome("Carlos Alberto de Nóbrega");
-        c1.setUsuario(u);
+        c1.setIdUsuario(1);
         System.out.println("> " + c1);
 
         Cliente c2 = new Cliente();
@@ -33,7 +29,7 @@ public class ClienteCollection {
         c2.setEmail("edson@pele.com.br");
         c2.setEndereco("Avenida Rio Branco, 183, Varginha-MG");
         c2.setNome("Edson Arantes do Nascimento");
-        c2.setUsuario(u);
+        c2.setIdUsuario(1);
         System.out.println("> " + c2);
 
         Cliente c3 = new Cliente();
@@ -44,7 +40,7 @@ public class ClienteCollection {
         c3.setEmail("zagallo@zagallo.com.br");
         c3.setEndereco("Travessa Monsenhor Ramalho, 4115, Guarapari-ES");
         c3.setNome("Mario Jorge Lobo Zagallo");
-        c3.setUsuario(u);
+        c3.setIdUsuario(1);
         System.out.println("> " + c3);
 
         return Arrays.asList(c1, c2, c3);

@@ -28,9 +28,6 @@ public class Usuario {
     private Endereco endereco;
     
     @OneToMany(mappedBy = "usuario")
-    private List<Cliente> clientes;
-    
-    @OneToMany(mappedBy = "usuario")
     private List<Locacao> locacoes;
     
     @OneToMany(mappedBy = "usuario")
@@ -59,13 +56,6 @@ public class Usuario {
     }
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-    
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
     }
     public List<Locacao> getLocacoes() {
         return locacoes;

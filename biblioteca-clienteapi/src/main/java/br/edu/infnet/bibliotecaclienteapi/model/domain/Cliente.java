@@ -1,13 +1,12 @@
-package br.edu.infnet.appbiblioteca.model.domain;
+package br.edu.infnet.bibliotecaclienteapi.model.domain;
 
 import java.time.LocalDate;
-import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,16 +21,14 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String email;
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
     
     @DateTimeFormat(pattern="dd/MM/yyyy")
     private LocalDate dataNascimento;
     
     private String endereco;
     private Boolean ativo;
-    private Integer idUsuario;
-
-    @OneToMany(mappedBy = "cliente")
-    private List<Locacao> locacoes;
     
     public Integer getId() {
         return id;
@@ -58,6 +55,12 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
@@ -76,18 +79,7 @@ public class Cliente {
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-    public List<Locacao> getLocacoes() {
-        return locacoes;
-    }
-    public void setLocacoes(List<Locacao> locacoes) {
-        this.locacoes = locacoes;
-    }
+    
     @Override
     public String toString() {
         return new StringBuilder()

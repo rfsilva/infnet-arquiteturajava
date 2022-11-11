@@ -27,7 +27,7 @@ public class LocacaoCollection {
         cliente.setEmail("nobrega@nobrega.com.br");
         cliente.setEndereco("Rua dos Tupinambás, 330, São Paulo-SP");
         cliente.setNome("Carlos Alberto de Nóbrega");
-        cliente.setUsuario(usuario);
+        cliente.setIdUsuario(1);
 
         Midia midia = new Midia();
         midia.setId(1);
